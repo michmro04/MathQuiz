@@ -13,9 +13,9 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="720" Height="320">
             <TextBlock x:Name="ScoreText" Text="[score_text]" FontSize="13" HorizontalAlignment="Left" TextAlignment="Center" Margin="20,0,0,0"/>
             <TextBlock x:Name="EquationText" Text="[equation_text]" FontSize="18" TextAlignment="Center" Margin="0,50,0,20"/>
-            <TextBox x:Name="AnswerInput" FontSize="20" TextAlignment="Center" Margin="0,0,0,10" Padding="5" Width="300"/>
+            <TextBox x:Name="AnswerInput" FontSize="20" TextAlignment="Center" Margin="0,0,0,10" Padding="5" Width="300" KeyDown="AnswerInput_KeyDown"/>
             <Button x:Name="CheckButton" Content="Sprawdź!" FontSize="16" Padding="10" Click="CheckButton_Click" Width="300"/>
-            <TextBlock x:Name="FeedbackText" Text="[feedback_text]" FontSize="16" Foreground="Black"  TextAlignment="Center" Margin="0,20,0,0" Width="395"/>
+            <TextBlock x:Name="FeedbackText" Text="[feedback_text]" Background="DarkGray" FontSize="16" Foreground="Black"  TextAlignment="Center" Margin="0,20,0,0" Width="223"/>
         </StackPanel>
     </Grid>
 </Window>
