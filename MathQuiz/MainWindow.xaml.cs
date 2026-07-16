@@ -25,10 +25,11 @@ namespace MathQuiz
             FeedbackText.Text = "";
 
             _quiz.GenerateNewQuestion();
-            EquationText.Text = $"{_indexOfEquation}.  {_quiz.CurrentEquation}";
+            ExerciseText.Text = $"{_indexOfEquation}. Enter the solution.";
             _indexOfEquation++;
 
             ScoreText.Text = $"Score: {_score}";
+            EquationText.Text = $"{_quiz.CurrentEquation} =";
 
             AnswerInput.Text = ""; //clearing textbox for new answer
             AnswerInput.Focus(); //setting focus to the answer input box
@@ -42,10 +43,10 @@ namespace MathQuiz
             {
                 if (_quiz.CheckAnswer(parsedAnswer))
                 {
-                    FeedbackText.Foreground = Brushes.Green;
+                    FeedbackText.Foreground = Brushes.LightGreen;
                     FeedbackText.Text = "Correct!";
                     _score++;
-                    await Task.Delay(2000);
+                    await Task.Delay(1500);
 
                     AskNewQuestion();
                 }

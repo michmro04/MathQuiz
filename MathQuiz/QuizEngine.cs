@@ -11,6 +11,7 @@ namespace MathQuiz
         private Random _random;
         public string CurrentEquation { get; private set; }
         public int CurrentAnswer { get; private set; }
+        public string CurrentExercise { get; private set; } = string.Empty;
 
         public enum Operation
         {
@@ -53,7 +54,7 @@ namespace MathQuiz
                 case Operation.Division:
                     int correctResult = _random.Next(1, 11);
                     a = b*correctResult; // Ensure a is a multiple of b
-                    CurrentEquation = $"{a} / {b}";
+                    CurrentEquation = $"{a} : {b}";
                     CurrentAnswer = correctResult;
                     break;
             }
