@@ -6,12 +6,14 @@ namespace MathQuiz
     public partial class MainWindow : Window
     {
         private QuizEngine _quiz;
+        private int _score = 0;
+
         public MainWindow()
         {
             InitializeComponent();
 
             _quiz = new QuizEngine();
-            
+
             AskNewQuestion();
         }
 
@@ -19,6 +21,7 @@ namespace MathQuiz
         {
             _quiz.GenerateNewQuestion();
             EquationText.Text = _quiz.CurrentEquation;
+            ScoreText.Text = $"Score = {_score}";
 
             AnswerInput.Text = ""; //clearing textbox for new answer
             AnswerInput.Focus(); //setting focus to the answer input box
@@ -34,12 +37,14 @@ namespace MathQuiz
                 {
                     FeedbackText.Foreground = Brushes.Green;
                     FeedbackText.Text = "Correct!";
+                    _score++;
                     AskNewQuestion();
                 }
                 else if (!_quiz.CheckAnswer(parsedAnswer))
                 {
                     FeedbackText.Foreground = Brushes.Red;
                     FeedbackText.Text = $"Incorrect! Answer is {_quiz.CurrentAnswer}.";
+                    _score--;
                     AskNewQuestion();
                 }
             }
