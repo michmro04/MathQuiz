@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MathQuiz"
         mc:Ignorable="d"
-        Title="MathQuiz" Height="450" Width="800">
+        Title="MathQuiz" Height="450" Width="800"
+        Foreground="White" Background="DimGray"
+        FontFamily="Lucida Sans">
+    
     <Grid>
-
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="320">
+            <TextBlock x:Name="EquationText" Text="Kliknij start aby rozpocząć" FontSize="18" TextAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox x:Name="AnswerInput" FontSize="20" TextAlignment="Center" Margin="0,0,0,10" Padding="5"/>
+            <Button x:Name="CheckButton" Content="Sprawdź!" FontSize="16" Padding="10" Click="CheckButton_Click"/>
+            <TextBlock x:Name="FeedbackText" Text="" FontSize="16" Foreground="Black"  TextAlignment="Center" Margin="0,20,0,0"/>
+        </StackPanel>
     </Grid>
 </Window>
