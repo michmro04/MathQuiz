@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MathQuiz
+namespace MathQuiz.Equations
 {
-    internal class QuizEngine
+    internal class EquationsEngine
     {
         private Random _random;
         public string CurrentEquation { get; private set; }
@@ -21,7 +21,7 @@ namespace MathQuiz
             Division        //3
         }
 
-        public QuizEngine()
+        public EquationsEngine()
         {
             _random = new Random();
             CurrentEquation = "";

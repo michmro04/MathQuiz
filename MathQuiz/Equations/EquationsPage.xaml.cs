@@ -13,11 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MathQuiz
+namespace MathQuiz.Equations
 {
     public partial class EquationsPage : Page
     {
-        private QuizEngine _quiz;
+        private EquationsEngine _quiz;
         private int _score = 0;
         private int _indexOfEquation = 1;
 
@@ -25,7 +25,7 @@ namespace MathQuiz
         {
             InitializeComponent();
 
-            _quiz = new QuizEngine();
+            _quiz = new EquationsEngine();
             FeedbackText.Text = "";
 
             AskNewQuestion();
