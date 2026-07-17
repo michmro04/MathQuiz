@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MathQuiz;
 
 namespace MathQuiz.Equations
 {
-    internal class EquationsEngine
+    internal class EquationsEngine : IQuizEngine
     {
         private Random _random;
-        public string CurrentEquation { get; private set; }
-        public int CurrentAnswer { get; private set; }
-        public string CurrentExercise { get; private set; } = string.Empty;
+        public string CurrentTask { get; private set; }
+        public double CurrentAnswer { get; private set; }
 
         public enum Operation
         {
@@ -24,7 +24,7 @@ namespace MathQuiz.Equations
         public EquationsEngine()
         {
             _random = new Random();
-            CurrentEquation = "";
+            CurrentTask = "";
             CurrentAnswer = 0;
         }
 
@@ -37,30 +37,30 @@ namespace MathQuiz.Equations
 
             switch (operation) {
                 case Operation.Addition:
-                    CurrentEquation = $"{a} + {b}";
+                    CurrentTask = $"{a} + {b}";
                     CurrentAnswer = a + b;
                     break;
 
                 case Operation.Subtraction:
-                    CurrentEquation = $"{a} - {b}";
+                    CurrentTask = $"{a} - {b}";
                     CurrentAnswer = a - b;
                     break;
 
                 case Operation.Multiplication:
-                    CurrentEquation = $"{a} * {b}";
+                    CurrentTask = $"{a} * {b}";
                     CurrentAnswer = a * b;
                     break;
 
                 case Operation.Division:
-                    int correctResult = _random.Next(1, 11);
-                    a = b*correctResult; // Ensure a is a multiple of b
-                    CurrentEquation = $"{a} : {b}";
+                    double correctResult = _random.Next(1, 11);
+                    a = (int)(b * correctResult); // Ensure a is a multiple of b
+                    CurrentTask = $"{a} : {b}";
                     CurrentAnswer = correctResult;
                     break;
             }
         }
 
-        public bool CheckAnswer(int userAnswer)
+        public bool CheckAnswer(double userAnswer)
         {
             return userAnswer == CurrentAnswer;
         }

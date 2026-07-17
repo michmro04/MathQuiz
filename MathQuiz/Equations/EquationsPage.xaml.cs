@@ -39,7 +39,7 @@ namespace MathQuiz.Equations
             _indexOfEquation++;
 
             ScoreText.Text = $"Score: {_score}";
-            EquationText.Text = $"{_quiz.CurrentEquation} =";
+            EquationText.Text = $"{_quiz.CurrentTask} =";
 
             AnswerInput.Text = ""; //clearing textbox for new answer
             AnswerInput.Focus(); //setting focus to the answer input box
@@ -49,7 +49,7 @@ namespace MathQuiz.Equations
         {
             string userInput = AnswerInput.Text;
 
-            if (int.TryParse(userInput, out int parsedAnswer))
+            if (double.TryParse(userInput, out double parsedAnswer))
             {
                 if (_quiz.CheckAnswer(parsedAnswer))
                 {
@@ -72,7 +72,7 @@ namespace MathQuiz.Equations
             else
             {
                 FeedbackText.Foreground = Brushes.Orange;
-                FeedbackText.Text = "Please enter a integer number.";
+                FeedbackText.Text = "Please enter a decimal number.";
             }
 
         }
