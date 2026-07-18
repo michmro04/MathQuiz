@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:MathQuiz"
         mc:Ignorable="d"
         Title="MathQuiz" Height="450" Width="800"
-        Foreground="White" FontFamily="Lucida Sans">
+        Foreground="White" FontFamily="Lucida Sans"
+        PreviewKeyDown="Window_PreviewKeyDown">
 
     
     <Window.Background>

@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using MathQuiz.Modules;
@@ -26,9 +27,7 @@ namespace MathQuiz
         {
             NavigationService.Navigate(new UniversalQuizPage(new PercentagesEngine()));
         }
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
+
+        
     }
 }
