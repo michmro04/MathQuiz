@@ -28,7 +28,7 @@ namespace MathQuiz
             indexOfQuestion++;
 
             ScoreText.Text = $"Score: {_score}";
-            EquationText.Text = $"{_quiz.CurrentTask} =";
+            EquationText.Text = $"{_quiz.CurrentTask}";
 
             AnswerInput.Text = ""; //clearing textbox for new answer
             AnswerInput.Focus(); //setting focus to the answer input box

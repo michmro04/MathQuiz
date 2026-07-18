@@ -8,24 +8,24 @@ namespace MathQuiz.Modules
 {
     public class PercentagesEngine : IQuizEngine
     {
-        private Random random;
+        private Random _random;
         public string CurrentTask { get; private set; }
         public double CurrentAnswer { get; private set; }
 
 
         public PercentagesEngine()
         {
-            random = new Random();
+            _random = new Random();
             CurrentTask = "";
             CurrentAnswer = 0;
         }
 
         public void GenerateNewQuestion()
         {
-            int baseNumber = random.Next(1, 10001);
-            int percentage = random.Next(1, 101);
-            CurrentTask = $"What is {percentage}% of {baseNumber}?";
-            CurrentAnswer = (percentage / 100.0) * baseNumber;
+            int baseNumber = _random.Next(1, 10001);
+            int percentage = _random.Next(1, 101);
+            CurrentTask = $"What is {percentage}% of {baseNumber}?\n(round to integer)";
+            CurrentAnswer = (percentage * baseNumber) / 100;
         }
 
         public bool CheckAnswer(double userAnswer)
