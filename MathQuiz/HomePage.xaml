@@ -11,7 +11,7 @@
 
             <Button Content="Missing angle in polygons" Background="CornflowerBlue" Style="{StaticResource ModernButtonStyle}" Width="300" Height="50" FontSize="20" Margin="0,0,0,20" Click="MissingAngleButton_Click"/>
 
-            <Button Content="Percents (soon)" Background="Gray" Style="{StaticResource ModernButtonStyle}" Width="300" Height="50" FontSize="20" Margin="0,0,0,20" Click="PercentsButton_Click"/>
+            <Button Content="Percentages" Background="CornflowerBlue" Style="{StaticResource ModernButtonStyle}" Width="300" Height="50" FontSize="20" Margin="0,0,0,20" Click="PercentagesButton_Click"/>
         </StackPanel>
     </Grid>
 </Page>

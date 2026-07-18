@@ -22,6 +22,10 @@ namespace MathQuiz
             NavigationService.Navigate(new UniversalQuizPage(new MissingAngleEngine()));
         }
 
+        private void PercentagesButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new UniversalQuizPage(new PercentagesEngine()));
+        }
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
