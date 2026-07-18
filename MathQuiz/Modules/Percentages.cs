@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace MathQuiz.Modules
 {
-    public class PercentagesEngine : IQuizEngine
+    public class Percentages : IQuizEngine
     {
         private Random _random;
         public string CurrentTask { get; private set; }
         public double CurrentAnswer { get; private set; }
 
 
-        public PercentagesEngine()
+        public Percentages()
         {
             _random = new Random();
             CurrentTask = "";

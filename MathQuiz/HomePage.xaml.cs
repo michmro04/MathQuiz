@@ -15,17 +15,17 @@ namespace MathQuiz
 
         private void EquationsButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new UniversalQuizPage(new EquationsEngine()));
+            NavigationService.Navigate(new UniversalQuizPage(new Equations()));
         }
 
         private void MissingAngleButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new UniversalQuizPage(new MissingAngleEngine()));
+            NavigationService.Navigate(new UniversalQuizPage(new MissingAngle()));
         }
 
         private void PercentagesButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new UniversalQuizPage(new PercentagesEngine()));
+            NavigationService.Navigate(new UniversalQuizPage(new Percentages()));
         }
 
         

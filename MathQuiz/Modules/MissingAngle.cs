@@ -1,11 +1,11 @@
 ﻿namespace MathQuiz.Modules
 {
-    public class MissingAngleEngine : IQuizEngine
+    public class MissingAngle : IQuizEngine
     {
         private Random _random;
         public string CurrentTask { get; private set; }
         public double CurrentAnswer { get; private set; }
-        public MissingAngleEngine() { 
+        public MissingAngle() { 
             _random = new Random();
             CurrentTask = "";
             CurrentAnswer = 0;

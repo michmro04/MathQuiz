@@ -1,6 +1,6 @@
 ﻿namespace MathQuiz.Modules
 {
-    public class EquationsEngine : IQuizEngine
+    public class Equations : IQuizEngine
     {
         private Random _random;
         public string CurrentTask { get; private set; }
@@ -14,7 +14,7 @@
             Division        //3
         }
 
-        public EquationsEngine()
+        public Equations()
         {
             _random = new Random();
             CurrentTask = "";
