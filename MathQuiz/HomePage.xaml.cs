@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MathQuiz.Equations;
+using MathQuiz.MissingAngle;
 
 namespace MathQuiz
 {
@@ -26,6 +27,11 @@ namespace MathQuiz
         private void EquationsButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new EquationsPage());
+        }
+
+        private void MissingAngleButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MissingAnglePage());
         }
     }
 }
