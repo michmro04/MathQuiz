@@ -9,11 +9,11 @@
       Title="UniversalQuizPage" Foreground="White">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="720" Height="361">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="720" Height="389">
             <Button Click="BackButton_Click" Content="← Back" Style="{StaticResource ModernButtonStyle}" Background="Gray" HorizontalAlignment="Left" Margin="0,0,0,20" Width="50"/>
             <TextBlock x:Name="ScoreText" Text="[score_text]" FontSize="15" HorizontalAlignment="Left" TextAlignment="Center" Margin="20,0,0,0" FontWeight="Bold"/>
-            <TextBlock x:Name="ExerciseText" Text="[exercise_text]" FontSize="26" TextAlignment="Left" Margin="0,0,0,10" FontWeight="SemiBold" Width="305"/>
-            <TextBlock x:Name="EquationText" Text="[equation_text]" FontSize="26" TextAlignment="Center" Margin="0,10,0,20"/>
+            <TextBlock x:Name="ExerciseText" Text="[exercise_text]" FontSize="24" TextAlignment="Left" FontWeight="SemiBold" Width="495"/>
+            <TextBlock x:Name="EquationText" Text="[equation_text]" FontSize="22" TextAlignment="Center" TextWrapping="Wrap" Margin="0,10,0,20" Height="66" Width="467"/>
             <TextBox x:Name="AnswerInput" Style="{StaticResource RoundedTextBoxStyle}" FontSize="22" TextAlignment="Center" Margin="0,0,0,20" Padding="5" Width="300" KeyDown="AnswerInput_KeyDown" Foreground="Black"/>
             <Button x:Name="CheckButton" Content="Check!" Style="{StaticResource ModernButtonStyle}" FontSize="18" FontWeight="Bold" Padding="10" Click="CheckButton_Click" Width="300" Height="45"/>
             <TextBlock x:Name="FeedbackText" Text="[feedback_text]" FontSize="18" FontWeight="Bold" Foreground="White" TextAlignment="Center" Margin="0,25,0,0" Width="400"/>

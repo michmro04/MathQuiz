@@ -28,6 +28,9 @@ namespace MathQuiz
             NavigationService.Navigate(new UniversalQuizPage(new Percentages()));
         }
 
-        
+        private void PythagorasButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new UniversalQuizPage(new Pythagoras()));
+        }
     }
 }
