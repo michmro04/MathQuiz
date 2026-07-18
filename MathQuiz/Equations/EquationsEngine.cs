@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MathQuiz;
-
-namespace MathQuiz.Equations
+﻿namespace MathQuiz.Equations
 {
-    internal class EquationsEngine : IQuizEngine
+    public class EquationsEngine : IQuizEngine
     {
         private Random _random;
         public string CurrentTask { get; private set; }

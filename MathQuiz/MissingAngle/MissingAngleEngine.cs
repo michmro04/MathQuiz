@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MathQuiz;
-
-namespace MathQuiz.MissingAngle
+﻿namespace MathQuiz.MissingAngle
 {
-    internal class MissingAngleEngine : IQuizEngine
+    public class MissingAngleEngine : IQuizEngine
     {
         private Random _random;
         public string CurrentTask { get; private set; }
