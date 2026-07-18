@@ -1,4 +1,4 @@
-﻿namespace MathQuiz.Equations
+﻿namespace MathQuiz.Modules
 {
     public class EquationsEngine : IQuizEngine
     {

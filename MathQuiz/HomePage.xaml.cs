@@ -1,11 +1,10 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using MathQuiz.Equations;
-using MathQuiz.MissingAngle;
+using MathQuiz.Modules;
 
 namespace MathQuiz
-{
+{   
     public partial class HomePage : Page
     {
         public HomePage()
@@ -23,5 +22,9 @@ namespace MathQuiz
             NavigationService.Navigate(new UniversalQuizPage(new MissingAngleEngine()));
         }
 
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

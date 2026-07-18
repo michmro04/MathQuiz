@@ -1,4 +1,4 @@
-﻿namespace MathQuiz.MissingAngle
+﻿namespace MathQuiz.Modules
 {
     public class MissingAngleEngine : IQuizEngine
     {
