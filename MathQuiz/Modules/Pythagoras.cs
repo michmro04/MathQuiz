@@ -34,11 +34,37 @@ namespace MathQuiz.Modules
             int multiplier = _random.Next(1, 6);
             var triple = _triples[_random.Next(_triples.Length)];
 
-            int leg1 = triple.a * multiplier;
-            int leg2 = triple.b * multiplier;
-            CurrentAnswer= triple.c * multiplier;
-            CurrentTask = $"Find the length of missing side of a right triangle with sides {triple.a} and {triple.b}";
-            
+            int missingSideIndex = _random.Next(3);
+
+            switch (missingSideIndex)
+            {
+                case 0: //find a
+                    {
+                        int leg1 = triple.b * multiplier;
+                        int leg2 = triple.c * multiplier;
+                        CurrentAnswer = triple.a * multiplier;
+                        CurrentTask = $"Find the length of missing side of a right triangle with sides {triple.b} and {triple.c}";
+                        break;
+                    }
+
+                case 1: //find b        
+                    {
+                        int leg1 = triple.a * multiplier;
+                        int leg2 = triple.c * multiplier;
+                        CurrentAnswer = triple.b * multiplier;
+                        CurrentTask = $"Find the length of missing side of a right triangle with sides {triple.a} and {triple.c}";
+                        break;
+                    }
+
+                case 2: //find c
+                    {
+                        int leg1 = triple.a * multiplier;
+                        int leg2 = triple.b * multiplier;
+                        CurrentAnswer= triple.c * multiplier;
+                        CurrentTask = $"Find the length of missing side of a right triangle with sides {triple.a} and {triple.b}";
+                        break;
+                    }
+            }
         }
 
 
