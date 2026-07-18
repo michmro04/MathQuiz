@@ -15,22 +15,42 @@ namespace MathQuiz
 
         private void EquationsButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new UniversalQuizPage(new Equations()));
+            if (int.TryParse(InputScoreGoal.Text, out int target))
+            {
+                QuizSession.TargetScore = target;
+            }
+
+            NavigationService.Navigate(new UniversalQuizPage(new Equations(), "Equations"));
         }
 
         private void MissingAngleButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new UniversalQuizPage(new MissingAngle()));
+            if (int.TryParse(InputScoreGoal.Text, out int target))
+            {
+                QuizSession.TargetScore = target;
+            }
+
+            NavigationService.Navigate(new UniversalQuizPage(new MissingAngle(), "Missing Angle"));
         }
 
         private void PercentagesButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new UniversalQuizPage(new Percentages()));
+            if (int.TryParse(InputScoreGoal.Text, out int target))
+            {
+                QuizSession.TargetScore = target;
+            }
+
+            NavigationService.Navigate(new UniversalQuizPage(new Percentages(), "Percentages"));
         }
 
         private void PythagorasButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new UniversalQuizPage(new Pythagoras()));
+            if (int.TryParse(InputScoreGoal.Text, out int target))
+            {
+                QuizSession.TargetScore = target;
+            }
+
+            NavigationService.Navigate(new UniversalQuizPage(new Pythagoras(), "Pythagoras"));
         }
     }
 }

@@ -10,11 +10,13 @@ namespace MathQuiz
         private IQuizEngine _quiz;
         private int _score = 0;
         private int indexOfQuestion = 1;
-        
-        public UniversalQuizPage(IQuizEngine engine)
+        private string _moduleName;
+
+        public UniversalQuizPage(IQuizEngine engine, string moduleName)
         {
             InitializeComponent();
             _quiz = engine;
+            _moduleName = moduleName;
             FeedbackText.Text = "";
             AskNewQuestion();
         }
@@ -27,7 +29,7 @@ namespace MathQuiz
             ExerciseText.Text = $"{indexOfQuestion}. Enter the solution.";
             indexOfQuestion++;
 
-            ScoreText.Text = $"Score: {_score}";
+            ScoreText.Text = $"Score: {_score}/ {QuizSession.TargetScore}";
             EquationText.Text = $"{_quiz.CurrentTask}";
 
             AnswerInput.Text = ""; //clearing textbox for new answer
@@ -45,6 +47,16 @@ namespace MathQuiz
                     FeedbackText.Foreground = Brushes.LightGreen;
                     FeedbackText.Text = "Correct!";
                     _score++;
+                    QuizSession.AddPoint(_moduleName);
+
+                    if(_score >= QuizSession.GetTotalScores())
+                    {
+                        FeedbackText.Text = "Congratulations! You've reached the target score!";
+                        await Task.Delay(2000);
+                        NavigationService.Navigate(new SucessPage());
+                        return;
+                    }
+
                     await Task.Delay(1500);
 
                     AskNewQuestion();
@@ -54,6 +66,7 @@ namespace MathQuiz
                     FeedbackText.Foreground = Brushes.Red;
                     FeedbackText.Text = $"Incorrect! Answer is {_quiz.CurrentAnswer}.";
                     _score--;
+                    QuizSession.SubPoint(_moduleName);
                     await Task.Delay(1500);
                     AskNewQuestion();
                 }
