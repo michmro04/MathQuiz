@@ -10,7 +10,7 @@ namespace MathQuiz
     {
         public static int TargetScore { get; set; } = 5;
 
-        public static Dictionary<string, int> ModuleScores { get; set } = new Dictionary<string, int>();
+        public static Dictionary<string, int> ModuleScores { get; set; } = new Dictionary<string, int>();
 
         public static int GetTotalScores()
         {
