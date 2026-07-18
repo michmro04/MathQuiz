@@ -1,8 +1,12 @@
-﻿<Page x:Class="MathQuiz.Equations.EquationsPage"
+﻿<Page x:Class="MathQuiz.UniversalQuizPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      Title="EquationsPage" Foreground="White">
-      
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MathQuiz"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UniversalQuizPage" Foreground="White">
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="720" Height="361">

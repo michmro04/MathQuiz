@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MathQuiz
 {
-    internal interface IQuizEngine
+    public interface IQuizEngine
     {
         string CurrentTask { get; }
         double CurrentAnswer { get; }

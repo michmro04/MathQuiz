@@ -12,32 +12,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MathQuiz.Equations;
+using MathQuiz.MissingAngle;
 
-namespace MathQuiz.MissingAngle
+
+namespace MathQuiz
 {
-    public partial class MissingAnglePage : Page
-    {   
-        private MissingAngleEngine _quiz;
+    public partial class UniversalQuizPage : Page
+    {
+        private IQuizEngine _quiz;
         private int _score = 0;
-        private int _indexOfQuestion = 1;
-
-
-        public MissingAnglePage ()
+        private int indexOfQuestion = 1;
+        
+        public UniversalQuizPage(IQuizEngine engine)
         {
             InitializeComponent();
-            _quiz = new MissingAngleEngine();
+            _quiz = engine;
             FeedbackText.Text = "";
             AskNewQuestion();
-
         }
 
         private void AskNewQuestion()
         {
             FeedbackText.Text = "";
-            _quiz.GenerateNewQuestion();
 
-            ExerciseText.Text = $"{_indexOfQuestion}. Enter the solution.";
-            _indexOfQuestion++;
+            _quiz.GenerateNewQuestion();
+            ExerciseText.Text = $"{indexOfQuestion}. Enter the solution.";
+            indexOfQuestion++;
 
             ScoreText.Text = $"Score: {_score}";
             EquationText.Text = $"{_quiz.CurrentTask} =";
@@ -90,8 +91,6 @@ namespace MathQuiz.MissingAngle
         {
             NavigationService.GoBack();
         }
-
-
 
 
     }

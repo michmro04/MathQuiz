@@ -26,12 +26,13 @@ namespace MathQuiz
 
         private void EquationsButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new EquationsPage());
+            NavigationService.Navigate(new UniversalQuizPage(new EquationsEngine()));
         }
 
         private void MissingAngleButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new MissingAnglePage());
+            NavigationService.Navigate(new UniversalQuizPage(new MissingAngleEngine()));
         }
+
     }
 }
