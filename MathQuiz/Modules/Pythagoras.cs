@@ -42,30 +42,30 @@ namespace MathQuiz.Modules
 
             switch (missingSideIndex)
             {
-                case 0: //find a
+                case 0: //find a (leg)
                     {
-                        int leg1 = triple.b * multiplier;
-                        int leg2 = triple.c * multiplier;
+                        int legB = triple.b * multiplier;
+                        int legC = triple.c * multiplier;
                         CurrentAnswer = triple.a * multiplier;
-                        CurrentTask = $"Find the length of missing side of a right triangle with sides {triple.b} and {triple.c}";
+                        CurrentTask = $"Find the length of missing leg of a right triangle with leg {legB} and hypotenuse {legC}";
                         break;
                     }
 
-                case 1: //find b        
+                case 1: //find b (leg)   
                     {
-                        int leg1 = triple.a * multiplier;
-                        int leg2 = triple.c * multiplier;
+                        int legA = triple.a * multiplier;
+                        int legC = triple.c * multiplier;
                         CurrentAnswer = triple.b * multiplier;
-                        CurrentTask = $"Find the length of missing side of a right triangle with sides {triple.a} and {triple.c}";
+                        CurrentTask = $"Find the length of missing leg of a right triangle with leg {legA} and hypotenuse {legC}";
                         break;
                     }
 
-                case 2: //find c
+                case 2: //find c (hypotenuse)
                     {
-                        int leg1 = triple.a * multiplier;
-                        int leg2 = triple.b * multiplier;
-                        CurrentAnswer= triple.c * multiplier;
-                        CurrentTask = $"Find the length of missing side of a right triangle with sides {triple.a} and {triple.b}";
+                        int legA = triple.a * multiplier;
+                        int legB = triple.b * multiplier;
+                        CurrentAnswer = triple.c * multiplier;
+                        CurrentTask = $"Find the length of missing hypotenuse of a right triangle with legs {legA} and {legB}";
                         break;
                     }
             }
