@@ -30,7 +30,7 @@ namespace MathQuiz
             {
                 if (module.Value > 0)
                 {
-                    summaryBuilder.AppendLine($"{module.Key} -> {module.Value}");
+                    summaryBuilder.AppendLine($"  - {module.Key}: {module.Value}");
                 }
             }
 
