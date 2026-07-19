@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Navigation;
 
+
 namespace MathQuiz
 {
     public partial class UniversalQuizPage : Page
@@ -53,7 +54,7 @@ namespace MathQuiz
                     {
                         FeedbackText.Text = "Congratulations! You've reached the target score!";
                         await Task.Delay(2000);
-                        NavigationService.Navigate(new SucessPage());
+                        NavigationService.Navigate(new SuccessPage());
                         return;
                     }
 

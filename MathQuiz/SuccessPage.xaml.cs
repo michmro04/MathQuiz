@@ -3,7 +3,9 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Net.Mail;
 using System.Windows.Navigation;
+using System.Threading.Tasks;
 
 namespace MathQuiz
 {
@@ -14,7 +16,7 @@ namespace MathQuiz
             InitializeComponent();
             GenerateSummary();
         }
-    
+
         public void GenerateSummary()
         {
             StringBuilder summaryBuilder = new StringBuilder();
@@ -22,11 +24,11 @@ namespace MathQuiz
             summaryBuilder.AppendLine($"Date: {DateTime.Now}");
             summaryBuilder.AppendLine($"Target Score: {QuizSession.TargetScore}");
             summaryBuilder.AppendLine($"Total Score: {QuizSession.GetTotalScores()}");
-            
 
-            foreach(var module in QuizSession.ModuleScores)
+
+            foreach (var module in QuizSession.ModuleScores)
             {
-                if(module.Value > 0)
+                if (module.Value > 0)
                 {
                     summaryBuilder.AppendLine($"{module.Key} -> {module.Value}");
                 }
@@ -37,7 +39,7 @@ namespace MathQuiz
 
 
         private void SendEmailButton_Click(object sender, RoutedEventArgs e)
-        { 
+        {
             EmailStatusText.Foreground = Brushes.Yellow;
             EmailStatusText.Text = "Sending...";
         }
@@ -48,5 +50,9 @@ namespace MathQuiz
             NavigationService.Navigate(new HomePage());
         }
 
+        private void ReturnToMenu_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new HomePage());
+        }
     }
 }
