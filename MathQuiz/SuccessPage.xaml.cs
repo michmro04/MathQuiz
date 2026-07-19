@@ -50,17 +50,19 @@ namespace MathQuiz
 
             try
             {
+                //throw new Exception("Test exception"); //for testing error handling
+
                 using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
                 {
                     client.EnableSsl = true;
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
                     client.UseDefaultCredentials = false;
 
-                    client.Credentials = new System.Net.NetworkCredential("mathquiz.bot.sender@gmail.com", Secrets.StmpPassword);
+                    client.Credentials = new System.Net.NetworkCredential(Secrets.BotEmail, Secrets.StmpPassword);
 
                     using(MailMessage mail = new MailMessage())
                     {
-                        mail.From = new MailAddress("mathquiz.bot.sender@gmail.com", "MathQuiz System");
+                        mail.From = new MailAddress(Secrets.BotEmail, "MathQuiz System");
                         mail.To.Add(targetEmail);
                         mail.Subject = "Math Quiz Summary";
                         mail.Body = body;
@@ -72,11 +74,15 @@ namespace MathQuiz
                 EmailStatusText.Foreground = Brushes.Green;
                 EmailStatusText.Text = "Email sent successfully!";
             }
-            catch
+            catch (Exception ex)
             {
+                /*
                 MessageBox.Show("Error during sending an email", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 EmailStatusText.Foreground = Brushes.Red;
                 EmailStatusText.Text = "Error during sending an email";
+                */
+                NavigationService.Navigate(new ErrorPage($"Error on SuccessPage: {ex.Message}")); 
+
             }
             finally
             {
