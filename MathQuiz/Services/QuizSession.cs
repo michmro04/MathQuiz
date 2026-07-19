@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MathQuiz
+namespace MathQuiz.Services
 {
     public static class QuizSession
     {

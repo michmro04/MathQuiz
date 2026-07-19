@@ -3,6 +3,7 @@ using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using MathQuiz.Modules;
+using MathQuiz.Services;
 
 namespace MathQuiz
 {   

@@ -1,4 +1,5 @@
-﻿using System.Net.Mail;
+﻿using MathQuiz.Services;
+using System.Net.Mail;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;

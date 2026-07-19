@@ -1,4 +1,4 @@
-﻿namespace MathQuiz
+﻿namespace MathQuiz.Services
 {
     public interface IQuizEngine
     {

@@ -6,6 +6,7 @@ using System.Windows.Media;
 using System.Net.Mail;
 using System.Windows.Navigation;
 using System.Threading.Tasks;
+using MathQuiz.Services;
 
 namespace MathQuiz
 {
