@@ -60,13 +60,16 @@ namespace MathQuiz
             }
             catch (Exception ex)
             {
-                /*
-                MessageBox.Show("Error during sending an email", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                EmailStatusText.Foreground = Brushes.Red;
-                EmailStatusText.Text = "Error during sending an email";
-                */
-
-                NavigationService.Navigate(new ErrorPage($"Error on SuccessPage: {ex.Message}")); 
+                try
+                {
+                    NavigationService.Navigate(new ErrorPage($"Error on SuccessPage: {ex.Message}"));
+                }
+                catch
+                {
+                    MessageBox.Show("Error during sending an email", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    EmailStatusText.Foreground = Brushes.Red;
+                    EmailStatusText.Text = "Error during sending an email";
+                }
 
             }
             finally
@@ -83,6 +86,7 @@ namespace MathQuiz
 
         private void ReturnToMenu_Click(object sender, RoutedEventArgs e)
         {
+            QuizSession.ResetSession();
             NavigationService.Navigate(new HomePage());
         }
     }
