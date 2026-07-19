@@ -9,6 +9,7 @@ namespace MathQuiz
     public static class QuizSession
     {
         public static int TargetScore { get; set; } = 5;
+        public static string userName { get; set; } = "nameOfStudent";
 
         public static Dictionary<string, int> ModuleScores { get; set; } = new Dictionary<string, int>();
 

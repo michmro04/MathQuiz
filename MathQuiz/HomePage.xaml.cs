@@ -65,5 +65,14 @@ namespace MathQuiz
                 
             }
         }
+
+        private void InputName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string name = InputName.Text;
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                QuizSession.userName = name; 
+            }
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace MathQuiz
         public void GenerateSummary()
         {
             StringBuilder summaryBuilder = new StringBuilder();
-            summaryBuilder.AppendLine("Student: nameOfStudent");
+            summaryBuilder.AppendLine($"Student: {QuizSession.userName}");
             summaryBuilder.AppendLine($"Date: {DateTime.Now}");
             summaryBuilder.AppendLine($"Target Score: {QuizSession.TargetScore}");
             summaryBuilder.AppendLine($"Total Score: {QuizSession.GetTotalScores()}");
