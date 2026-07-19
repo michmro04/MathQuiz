@@ -5,6 +5,9 @@
 
 *.txt
 
+#file with password to bot notify gmail
+Secrets.cs
+
 # User-specific files
 *.rsuser
 *.suo

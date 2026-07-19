@@ -50,7 +50,7 @@ namespace MathQuiz
                     _score++;
                     QuizSession.AddPoint(_moduleName);
 
-                    if(_score >= QuizSession.GetTotalScores())
+                    if(_score >= QuizSession.TargetScore)
                     {
                         FeedbackText.Text = "Congratulations! You've reached the target score!";
                         await Task.Delay(2000);

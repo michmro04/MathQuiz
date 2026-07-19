@@ -38,10 +38,50 @@ namespace MathQuiz
         }
 
 
-        private void SendEmailButton_Click(object sender, RoutedEventArgs e)
+        private async void SendEmailButton_Click(object sender, RoutedEventArgs e)
         {
+            string targetEmail = EmailInput.Text;
+            string body = SummaryText.Text;
+
+            SendEmailButton.IsEnabled = false;
+
             EmailStatusText.Foreground = Brushes.Yellow;
-            EmailStatusText.Text = "Sending...";
+            EmailStatusText.Text = "Connecting with SMTP server...";
+
+            try
+            {
+                using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    client.EnableSsl = true;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    client.UseDefaultCredentials = false;
+
+                    client.Credentials = new System.Net.NetworkCredential("mathquiz.bot@gmail.com", Secrets);
+
+                    using(MailMessage mail = new MailMessage())
+                    {
+                        mail.From = new MailAddress("mathquiz.bot@gmail.com", "MathQuiz System");
+                        mail.To.Add(targetEmail);
+                        mail.Subject = "Math Quiz Summary";
+                        mail.Body = body;
+
+                        await client.SendMailAsync(mail);
+                    }
+                }
+
+                EmailStatusText.Foreground = Brushes.Green;
+                EmailStatusText.Text = "Email sent successfully!";
+            }
+            catch
+            {
+                MessageBox.Show("Error during sending an email", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                EmailStatusText.Foreground = Brushes.Red;
+                EmailStatusText.Text = "Error during sending an email";
+            }
+            finally
+            {
+                SendEmailButton.IsEnabled = true;
+            }
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)

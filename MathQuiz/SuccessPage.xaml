@@ -5,11 +5,13 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="600">
-            <TextBlock Text="🎉 Congratukations! 🎉 You've reached your today's score goal!" TextWrapping="Wrap" FontSize="36" FontWeight="Bold" Foreground="LightGreen" TextAlignment="Center" Margin="0,0,0,20" Height="112"/>
+            <TextBlock TextWrapping="Wrap" FontSize="30" FontWeight="Bold" Foreground="LightGreen" TextAlignment="Center" Margin="0,0,0,20" Height="94">
+    🎉               Congratulations! 🎉<LineBreak/>
+                    You've reached your today's score goal!
+            </TextBlock>
+            <TextBlock Text="Resume of today's session:" HorizontalAlignment="Left" FontSize="20" FontWeight="SemiBold" TextAlignment="Center" Margin="20,0,0,5"/>
 
-            <TextBlock Text="Resume of today's session:" HorizontalAlignment="Left" FontSize="22" FontWeight="SemiBold" TextAlignment="Center" Margin="20,0,0,5"/>
-
-            <TextBlock x:Name="SummaryText" Text="[summarytext]" FontSize="18" TextAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,30" Foreground="LightGray" LineHeight="25"/>
+            <TextBlock x:Name="SummaryText" Text="[summarytext]" FontSize="15" TextAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,30" Foreground="LightGray" LineHeight="25"/>
 
             <Border Background="#2C3E50" CornerRadius="10" Padding="20" Margin="0,0,0,20">
                 <StackPanel>

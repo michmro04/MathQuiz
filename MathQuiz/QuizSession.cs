@@ -20,13 +20,25 @@ namespace MathQuiz
         public static void AddPoint(string moduleName)
         {
             if (ModuleScores.ContainsKey(moduleName))
+            {
                 ModuleScores[moduleName]++;
+            }
+            else
+            {
+                ModuleScores[moduleName] = 1;
+            }
         }
 
         public static void SubPoint(string moudleName)
         {
-            if(ModuleScores.ContainsKey(moudleName))
+            if (ModuleScores.ContainsKey(moudleName))
+            {
                 ModuleScores[moudleName]--;
+            }
+            else
+            {
+                ModuleScores[moudleName] = -1;
+            }
         }
         public static void ResetSession()
         {

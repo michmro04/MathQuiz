@@ -55,7 +55,15 @@ namespace MathQuiz
 
         private void InputScoreGoal_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            try
+            {
+                int target = int.Parse(InputScoreGoal.Text);
+                QuizSession.TargetScore = target;
+            }
+            catch
+            {
+                
+            }
         }
     }
 }
