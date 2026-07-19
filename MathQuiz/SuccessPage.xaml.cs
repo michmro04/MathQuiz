@@ -56,11 +56,11 @@ namespace MathQuiz
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
                     client.UseDefaultCredentials = false;
 
-                    client.Credentials = new System.Net.NetworkCredential("mathquiz.bot@gmail.com", Secrets);
+                    client.Credentials = new System.Net.NetworkCredential("mathquiz.bot.sender@gmail.com", Secrets.StmpPassword);
 
                     using(MailMessage mail = new MailMessage())
                     {
-                        mail.From = new MailAddress("mathquiz.bot@gmail.com", "MathQuiz System");
+                        mail.From = new MailAddress("mathquiz.bot.sender@gmail.com", "MathQuiz System");
                         mail.To.Add(targetEmail);
                         mail.Subject = "Math Quiz Summary";
                         mail.Body = body;
