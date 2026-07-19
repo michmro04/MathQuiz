@@ -4,12 +4,12 @@
       Title="HomePage">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="380">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="380">
             <TextBlock Text="Math Quiz" FontSize="36" FontWeight="Bold" Foreground="White" TextAlignment="Center" Margin="0,0,0,10"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,30">
                 <TextBlock Text="Enter today's score goal:" Foreground="White" FontSize="20" VerticalAlignment="Center"/>
-                <TextBox x:Name="InputScoreGoal" Width="100" Height="30" Style="{StaticResource RoundedTextBoxStyle}" Margin="10,0,0,0" FontSize="20"/>
+                <TextBox x:Name="InputScoreGoal" Width="50" TextAlignment="Center" Height="35" Style="{StaticResource RoundedTextBoxStyle}" Margin="10,0,0,0" FontSize="20" TextChanged="InputScoreGoal_TextChanged"/>
             </StackPanel>
 
             <Button Content="Equations" Background="CornflowerBlue" Style="{StaticResource ModernButtonStyle}" Width="280" Height="50" FontSize="20" Margin="0,0,0,20" Click="EquationsButton_Click"/>

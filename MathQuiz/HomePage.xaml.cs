@@ -52,5 +52,10 @@ namespace MathQuiz
 
             NavigationService.Navigate(new UniversalQuizPage(new Pythagoras(), "Pythagoras"));
         }
+
+        private void InputScoreGoal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
