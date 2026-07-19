@@ -42,6 +42,7 @@ namespace MathQuiz
         {
             string targetEmail = EmailInput.Text;
             string body = SummaryText.Text;
+            string subject = "Math Quiz Summary";
 
             SendEmailButton.IsEnabled = false;
 
@@ -52,24 +53,7 @@ namespace MathQuiz
             {
                 //throw new Exception("Test exception"); //for testing error handling
 
-                using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
-                {
-                    client.EnableSsl = true;
-                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    client.UseDefaultCredentials = false;
-
-                    client.Credentials = new System.Net.NetworkCredential(Secrets.BotEmail, Secrets.StmpPassword);
-
-                    using(MailMessage mail = new MailMessage())
-                    {
-                        mail.From = new MailAddress(Secrets.BotEmail, "MathQuiz System");
-                        mail.To.Add(targetEmail);
-                        mail.Subject = "Math Quiz Summary";
-                        mail.Body = body;
-
-                        await client.SendMailAsync(mail);
-                    }
-                }
+                await EmailEngine.SendEmail(targetEmail, subject, body);
 
                 EmailStatusText.Foreground = Brushes.Green;
                 EmailStatusText.Text = "Email sent successfully!";
@@ -81,6 +65,7 @@ namespace MathQuiz
                 EmailStatusText.Foreground = Brushes.Red;
                 EmailStatusText.Text = "Error during sending an email";
                 */
+
                 NavigationService.Navigate(new ErrorPage($"Error on SuccessPage: {ex.Message}")); 
 
             }

@@ -20,6 +20,7 @@ namespace MathQuiz
         {
             string targetEmail = Secrets.AdminEmail;
             string body = $"Message from user:\n{ErrorDescription.Text}\n\nTechnical Details:\n{_technicalDescription}";
+            string subject = "MathQuiz Error Report";
 
             SendReportButton.IsEnabled = false;
 
@@ -28,24 +29,8 @@ namespace MathQuiz
 
             try
             {
-                using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
-                {
-                    client.EnableSsl = true;
-                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    client.UseDefaultCredentials = false;
-
-                    client.Credentials = new System.Net.NetworkCredential(Secrets.BotEmail, Secrets.StmpPassword);
-
-                    using (MailMessage mail = new MailMessage())
-                    {
-                        mail.From = new MailAddress(Secrets.BotEmail, "MathQuiz System - error report");
-                        mail.To.Add(targetEmail);
-                        mail.Subject = "MathQuiz Error Report";
-                        mail.Body = body;
-
-                        await client.SendMailAsync(mail);
-                    }
-                }
+                
+                await EmailEngine.SendEmail(targetEmail,subject, body);
 
                 ReportStatusText.Foreground = Brushes.Green;
                 ReportStatusText.Text = "Report sent successfully!";
