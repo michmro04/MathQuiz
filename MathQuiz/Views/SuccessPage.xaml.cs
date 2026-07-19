@@ -73,7 +73,6 @@ namespace MathQuiz.Views
                     EmailStatusText.Foreground = Brushes.Red;
                     EmailStatusText.Text = "Error during sending an email";
                 }
-
             }
             finally
             {
