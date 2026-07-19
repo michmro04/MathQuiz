@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Navigation;
 
-namespace MathQuiz
+namespace MathQuiz.Views
 {
     public partial class ErrorPage : Page
     {

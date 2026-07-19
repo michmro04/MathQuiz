@@ -5,7 +5,7 @@ using System.Windows.Navigation;
 using MathQuiz.Modules;
 using MathQuiz.Services;
 
-namespace MathQuiz
+namespace MathQuiz.Views
 {   
     public partial class HomePage : Page
     {

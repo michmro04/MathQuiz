@@ -7,14 +7,14 @@ namespace MathQuiz
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new HomePage());
+            MainFrame.Navigate(new Views.HomePage());
         }
 
         private void Window_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == System.Windows.Input.Key.Escape)
             {
-                if (MainFrame.Content is HomePage)
+                if (MainFrame.Content is Views.HomePage)
                 {
                     Application.Current.Shutdown();
                 }

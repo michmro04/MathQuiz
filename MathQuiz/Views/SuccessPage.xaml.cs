@@ -7,8 +7,10 @@ using System.Net.Mail;
 using System.Windows.Navigation;
 using System.Threading.Tasks;
 using MathQuiz.Services;
+using MathQuiz.Modules;
+using MathQuiz.Views;
 
-namespace MathQuiz
+namespace MathQuiz.Views
 {
     public partial class SuccessPage : Page
     {
