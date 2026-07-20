@@ -10,6 +10,7 @@ Secrets.cs
 
 #video file
 *.mp4
+/MathQuiz/*.mp4
 
 # User-specific files
 *.rsuser
