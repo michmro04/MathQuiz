@@ -36,7 +36,7 @@ namespace MathQuiz.Views
 
             foreach (var module in QuizSession.ModuleScores)
             {
-                if (module.Value > 0)
+                if (module.Value != 0)
                 {
                     summaryBuilder.AppendLine($"  - {module.Key}: {module.Value}");
                 }
