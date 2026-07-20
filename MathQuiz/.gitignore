@@ -8,6 +8,9 @@
 #file with password to bot notify gmail
 Secrets.cs
 
+#video file
+*.mp4
+
 # User-specific files
 *.rsuser
 *.suo
