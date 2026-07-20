@@ -1,4 +1,6 @@
-English version 
+https://github.com/user-attachments/assets/9df7c8da-59f5-4a9f-be4d-d0250344ec7b
+
+# English version 
 # MathQuiz 🧮
 
 A modern, modular desktop application built with C# and WPF, designed to help students practice mathematics through interactive quizzes. The application features a gamified target-score system and an integrated SMTP email engine for sending automated progress reports directly to teachers.
@@ -33,7 +35,7 @@ This project was built with a strong emphasis on software engineering best pract
 **Michał** - Informatics Student at Gdańsk University of Technology
 
 ------
-Wersja polska
+# Wersja polska
 # MathQuiz 🧮
 
 Nowoczesna, modułowa aplikacja desktopowa (C# / WPF) stworzona z myślą o uczniach ćwiczących matematykę. Program posiada system celów punktowych oraz wbudowany silnik SMTP, który pozwala na automatyczne wysyłanie raportów z wynikami bezpośrednio do korepetytora.
