@@ -23,11 +23,16 @@ namespace MathQuiz.Views
         public void GenerateSummary()
         {
             StringBuilder summaryBuilder = new StringBuilder();
+            
             summaryBuilder.AppendLine($"Student: {QuizSession.userName}");
             summaryBuilder.AppendLine($"Date: {DateTime.Now}");
             summaryBuilder.AppendLine($"Target Score: {QuizSession.TargetScore}");
             summaryBuilder.AppendLine($"Total Score: {QuizSession.GetTotalScores()}");
 
+            if(QuizSession.GetTotalScores() > QuizSession.TargetScore)
+            {
+                summaryBuilder.AppendLine($"Extra Points:  +{(QuizSession.GetTotalScores() - QuizSession.TargetScore)}");
+            }
 
             foreach (var module in QuizSession.ModuleScores)
             {

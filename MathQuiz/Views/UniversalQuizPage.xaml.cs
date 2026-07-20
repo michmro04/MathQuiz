@@ -10,7 +10,6 @@ namespace MathQuiz.Views
     public partial class UniversalQuizPage : Page
     {
         private IQuizEngine _quiz;
-        private int _score = 0;
         private int indexOfQuestion = 1;
         private string _moduleName;
 
@@ -20,6 +19,12 @@ namespace MathQuiz.Views
             _quiz = engine;
             _moduleName = moduleName;
             FeedbackText.Text = "";
+
+            if(QuizSession.GetTotalScores() >= QuizSession.TargetScore)
+            {
+                FinishButton.Visibility = Visibility.Visible;
+            }
+
             AskNewQuestion();
         }
 
@@ -31,7 +36,7 @@ namespace MathQuiz.Views
             ExerciseText.Text = $"{indexOfQuestion}. Enter the solution.";
             indexOfQuestion++;
 
-            ScoreText.Text = $"Score: {_score}/ {QuizSession.TargetScore}";
+            ScoreText.Text = $"Score: {QuizSession.GetTotalScores()}/ {QuizSession.TargetScore}";
             EquationText.Text = $"{_quiz.CurrentTask}";
 
             AnswerInput.Text = ""; //clearing textbox for new answer
@@ -48,15 +53,26 @@ namespace MathQuiz.Views
                 {
                     FeedbackText.Foreground = Brushes.LightGreen;
                     FeedbackText.Text = "Correct!";
-                    _score++;
+                    QuizSession.Score++;
                     QuizSession.AddPoint(_moduleName);
 
-                    if(_score >= QuizSession.TargetScore)
+                    if(QuizSession.GetTotalScores() >= QuizSession.TargetScore && !QuizSession.IsGoalMessageShow)
                     {
-                        FeedbackText.Text = "Congratulations! You've reached the target score!";
-                        await Task.Delay(2000);
-                        NavigationService.Navigate(new SuccessPage());
-                        return;
+                        QuizSession.IsGoalMessageShow = true;
+                        FinishButton.Visibility = Visibility.Visible;
+
+                        MessageBoxResult result = MessageBox.Show(
+                            "Congratulations! You've reached the target score!",
+                            "Target reached!",
+                            MessageBoxButton.YesNo,
+                            MessageBoxImage.Information
+                        );
+
+                        if(result == MessageBoxResult.Yes)
+                        {
+                            NavigationService.Navigate(new SuccessPage());
+                            return;
+                        }
                     }
 
                     await Task.Delay(1500);
@@ -67,7 +83,7 @@ namespace MathQuiz.Views
                 {
                     FeedbackText.Foreground = Brushes.Red;
                     FeedbackText.Text = $"Incorrect! Answer is {_quiz.CurrentAnswer}.";
-                    _score--;
+                    QuizSession.Score--;
                     QuizSession.SubPoint(_moduleName);
                     await Task.Delay(1500);
                     AskNewQuestion();
@@ -94,6 +110,9 @@ namespace MathQuiz.Views
             NavigationService.GoBack();
         }
 
-
+        private void FinishButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SuccessPage());
+        }
     }
 }

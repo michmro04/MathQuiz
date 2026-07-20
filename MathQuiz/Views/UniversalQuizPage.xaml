@@ -17,6 +17,7 @@
             <TextBox x:Name="AnswerInput" Style="{StaticResource RoundedTextBoxStyle}" FontSize="22" TextAlignment="Center" Margin="0,0,0,20" Padding="5" Width="300" KeyDown="AnswerInput_KeyDown" Foreground="Black"/>
             <Button x:Name="CheckButton" Content="Check!" Style="{StaticResource ModernButtonStyle}" FontSize="18" FontWeight="Bold" Padding="10" Click="CheckButton_Click" Width="300" Height="45"/>
             <TextBlock x:Name="FeedbackText" Text="[feedback_text]" FontSize="18" FontWeight="Bold" Foreground="White" TextAlignment="Center" Margin="0,25,0,0" Width="400"/>
+            <Button x:Name="FinishButton" Click="FinishButton_Click" Content="Finish &amp; Report" Style="{StaticResource ModernButtonStyle}" Background="BlueViolet" Width="180" Visibility="Hidden"/>
         </StackPanel>
     </Grid>
 </Page>
